@@ -17,4 +17,5 @@ Route::get('/', function () {
 
 Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middleware' => ['web', 'auth']], function () {
     CRUD::resource('store', 'Admin\StoreCrudController');
+    CRUD::resource('article', 'Admin\ArticleCrudController');
 });

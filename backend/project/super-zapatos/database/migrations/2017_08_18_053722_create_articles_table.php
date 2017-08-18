@@ -19,7 +19,7 @@ class CreateArticlesTable extends Migration
             $table->softDeletes();
             $table->string('name');
             $table->text('description');
-            $table->float('price', 10,2);
+            $table->decimal('price', 10,2);
             $table->integer('total_in_shelf');
             $table->integer('total_in_vault');
             $table->integer('store_id')->unsigned();

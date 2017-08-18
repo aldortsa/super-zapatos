@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
@@ -36,9 +36,9 @@ class Store extends Model
         |--------------------------------------------------------------------------
         */
 
-        public function stores()
+        public function articles()
         {
-            return $this->belongsTo('App\Models\Store');
+            return $this->hasMany('App\Article');
         }
 
         /*

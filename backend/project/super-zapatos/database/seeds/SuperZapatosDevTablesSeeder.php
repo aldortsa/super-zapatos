@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class UsersTableSeeder extends Seeder
+class SuperZapatosDevTablesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -24,5 +24,8 @@ class UsersTableSeeder extends Seeder
         ];
 
         DB::table('users')->insert($users);
+
+        factory(App\Store::class, 10)->create();
+        factory(App\Article::class, 1000)->create();
     }
 }

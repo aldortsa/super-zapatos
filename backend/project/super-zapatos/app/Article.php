@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
@@ -22,7 +22,8 @@ class Article extends Model
 					    		'description',
 					    		'price',
 					    		'total_in_shelf',
-					    		'total_in_vault'
+					    		'total_in_vault',
+                                'store_id'
     						  ];
     	public $timestamps = true;
 
@@ -38,9 +39,9 @@ class Article extends Model
     	|--------------------------------------------------------------------------
     	*/
 
-    	public function stores()
+    	public function store()
         {
-            return $this->belongsTo('App\Store');
+            return $this->belongsTo('App\Store', 'store_id');
         }
 
     	/*
