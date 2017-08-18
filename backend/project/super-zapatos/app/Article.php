@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
@@ -8,7 +8,7 @@ use Backpack\CRUD\CrudTrait;
 class Article extends Model
 {
     use CrudTrait;
-    /*
+    	/*
     	|--------------------------------------------------------------------------
     	| GLOBAL VARIABLES
     	|--------------------------------------------------------------------------
@@ -17,11 +17,13 @@ class Article extends Model
     	protected $table = 'articles';
     	protected $primaryKey = 'id';
     	protected $hidden = ['id'];
-    	protected $fillable = ['name'];
-    	protected $fillable = ['description'];
-    	protected $fillable = ['price'];
-    	protected $fillable = ['total_in_shelf'];
-    	protected $fillable = ['total_in_vault'];
+    	protected $fillable = [
+					    		'name',
+					    		'description',
+					    		'price',
+					    		'total_in_shelf',
+					    		'total_in_vault'
+    						  ];
     	public $timestamps = true;
 
     	/*
@@ -38,7 +40,7 @@ class Article extends Model
 
     	public function stores()
         {
-            return $this->belongsTo('App\Models\Article', 'article_tag');
+            return $this->belongsTo('App\Store');
         }
 
     	/*
