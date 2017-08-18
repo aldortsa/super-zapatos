@@ -324,6 +324,7 @@ php:
             - xsl
             - zzzz_custom
             - mbstring
+            - zip
         pear: {  }
         pecl: {  }
     ini:
