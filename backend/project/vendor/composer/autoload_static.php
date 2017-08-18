@@ -59,6 +59,7 @@ class ComposerStaticInit42fe488218ecb6e6691159f1fbf5697f
         array (
             'Psy\\' => 4,
             'Psr\\Log\\' => 8,
+            'Prologue\\Alerts\\' => 16,
             'PhpParser\\' => 10,
         ),
         'M' => 
@@ -69,6 +70,10 @@ class ComposerStaticInit42fe488218ecb6e6691159f1fbf5697f
         array (
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
+        ),
+        'J' => 
+        array (
+            'Jenssegers\\Date\\' => 16,
         ),
         'I' => 
         array (
@@ -89,6 +94,10 @@ class ComposerStaticInit42fe488218ecb6e6691159f1fbf5697f
         array (
             'Cron\\' => 5,
             'Carbon\\' => 7,
+        ),
+        'B' => 
+        array (
+            'Backpack\\Base\\' => 14,
         ),
         'A' => 
         array (
@@ -183,6 +192,10 @@ class ComposerStaticInit42fe488218ecb6e6691159f1fbf5697f
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
+        'Prologue\\Alerts\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/prologue/alerts/src',
+        ),
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
@@ -198,6 +211,10 @@ class ComposerStaticInit42fe488218ecb6e6691159f1fbf5697f
         'Laravel\\Tinker\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
+        ),
+        'Jenssegers\\Date\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jenssegers/date/src',
         ),
         'Illuminate\\' => 
         array (
@@ -230,6 +247,10 @@ class ComposerStaticInit42fe488218ecb6e6691159f1fbf5697f
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
+        ),
+        'Backpack\\Base\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/backpack/base/src',
         ),
         'App\\' => 
         array (
@@ -288,6 +309,15 @@ class ComposerStaticInit42fe488218ecb6e6691159f1fbf5697f
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'Backpack\\Base\\BaseServiceProvider' => __DIR__ . '/..' . '/backpack/base/src/BaseServiceProvider.php',
+        'Backpack\\Base\\app\\Http\\Controllers\\AdminController' => __DIR__ . '/..' . '/backpack/base/src/app/Http/Controllers/AdminController.php',
+        'Backpack\\Base\\app\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/..' . '/backpack/base/src/app/Http/Controllers/Auth/ForgotPasswordController.php',
+        'Backpack\\Base\\app\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/..' . '/backpack/base/src/app/Http/Controllers/Auth/LoginController.php',
+        'Backpack\\Base\\app\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/..' . '/backpack/base/src/app/Http/Controllers/Auth/RegisterController.php',
+        'Backpack\\Base\\app\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/..' . '/backpack/base/src/app/Http/Controllers/Auth/ResetPasswordController.php',
+        'Backpack\\Base\\app\\Http\\Controllers\\Controller' => __DIR__ . '/..' . '/backpack/base/src/app/Http/Controllers/Controller.php',
+        'Backpack\\Base\\app\\Http\\Middleware\\Admin' => __DIR__ . '/..' . '/backpack/base/src/app/Http/Middleware/Admin.php',
+        'Backpack\\Base\\app\\Notifications\\ResetPasswordNotification' => __DIR__ . '/..' . '/backpack/base/src/app/Notifications/ResetPasswordNotification.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
@@ -1552,6 +1582,8 @@ class ComposerStaticInit42fe488218ecb6e6691159f1fbf5697f
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
+        'Jenssegers\\Date\\Date' => __DIR__ . '/..' . '/jenssegers/date/src/Date.php',
+        'Jenssegers\\Date\\DateServiceProvider' => __DIR__ . '/..' . '/jenssegers/date/src/DateServiceProvider.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
@@ -2342,6 +2374,9 @@ class ComposerStaticInit42fe488218ecb6e6691159f1fbf5697f
         'PhpParser\\Serializer\\XML' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Serializer/XML.php',
         'PhpParser\\Unserializer' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Unserializer.php',
         'PhpParser\\Unserializer\\XML' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Unserializer/XML.php',
+        'Prologue\\Alerts\\AlertsMessageBag' => __DIR__ . '/..' . '/prologue/alerts/src/AlertsMessageBag.php',
+        'Prologue\\Alerts\\AlertsServiceProvider' => __DIR__ . '/..' . '/prologue/alerts/src/AlertsServiceProvider.php',
+        'Prologue\\Alerts\\Facades\\Alert' => __DIR__ . '/..' . '/prologue/alerts/src/Facades/Alert.php',
         'Prophecy\\Argument' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument.php',
         'Prophecy\\Argument\\ArgumentsWildcard' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument/ArgumentsWildcard.php',
         'Prophecy\\Argument\\Token\\AnyValueToken' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument/Token/AnyValueToken.php',

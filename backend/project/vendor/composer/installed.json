@@ -3468,5 +3468,227 @@
             "testing",
             "xunit"
         ]
+    },
+    {
+        "name": "jenssegers/date",
+        "version": "v3.2.12",
+        "version_normalized": "3.2.12.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jenssegers/date.git",
+            "reference": "1db4d580d1d45085a48fd4a332697619b9a3851c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jenssegers/date/zipball/1db4d580d1d45085a48fd4a332697619b9a3851c",
+            "reference": "1db4d580d1d45085a48fd4a332697619b9a3851c",
+            "shasum": ""
+        },
+        "require": {
+            "nesbot/carbon": "^1.0",
+            "php": ">=5.4",
+            "symfony/translation": "^2.7|^3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.0|^5.0|^6.0",
+            "satooshi/php-coveralls": "^1.0"
+        },
+        "time": "2017-06-30T11:51:03+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.1-dev"
+            },
+            "laravel": {
+                "providers": [
+                    "Jenssegers\\Date\\DateServiceProvider"
+                ],
+                "aliases": {
+                    "Date": "Jenssegers\\Date\\Date"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Jenssegers\\Date\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jens Segers",
+                "homepage": "https://jenssegers.com"
+            }
+        ],
+        "description": "A date library to help you work with dates in different languages",
+        "homepage": "https://github.com/jenssegers/date",
+        "keywords": [
+            "carbon",
+            "date",
+            "datetime",
+            "i18n",
+            "laravel",
+            "time",
+            "translation"
+        ]
+    },
+    {
+        "name": "prologue/alerts",
+        "version": "0.4.1",
+        "version_normalized": "0.4.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/prologuephp/alerts.git",
+            "reference": "2a7184a9f39ab6f6dde85dbe0b9c783241bf52ea"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/prologuephp/alerts/zipball/2a7184a9f39ab6f6dde85dbe0b9c783241bf52ea",
+            "reference": "2a7184a9f39ab6f6dde85dbe0b9c783241bf52ea",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/config": "~5",
+            "illuminate/session": "~5",
+            "illuminate/support": "~5",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "~0.9",
+            "phpunit/phpunit": "~4.1"
+        },
+        "time": "2017-01-24T13:22:25+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Prologue\\Alerts\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Dries Vints",
+                "email": "dries.vints@gmail.com",
+                "homepage": "http://driesvints.com",
+                "role": "Maintainer"
+            }
+        ],
+        "description": "Prologue Alerts is a package that handles global site messages.",
+        "keywords": [
+            "alerts",
+            "laravel",
+            "messages"
+        ]
+    },
+    {
+        "name": "almasaeed2010/adminlte",
+        "version": "v2.3.11",
+        "version_normalized": "2.3.11.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/almasaeed2010/AdminLTE.git",
+            "reference": "2be703222af2edcb87e562d3da2299e4352bff8a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/almasaeed2010/AdminLTE/zipball/2be703222af2edcb87e562d3da2299e4352bff8a",
+            "reference": "2be703222af2edcb87e562d3da2299e4352bff8a",
+            "shasum": ""
+        },
+        "time": "2017-01-08T21:03:57+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Abdullah Almsaeed",
+                "email": "abdullah@almsaeedstudio.com"
+            }
+        ],
+        "description": "AdminLTE - admin control panel and dashboard that's based on Bootstrap 3",
+        "homepage": "http://almsaeedstudio.com/",
+        "keywords": [
+            "JS",
+            "admin",
+            "back-end",
+            "css",
+            "less",
+            "responsive",
+            "template",
+            "theme",
+            "web"
+        ]
+    },
+    {
+        "name": "backpack/base",
+        "version": "0.7.22",
+        "version_normalized": "0.7.22.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Laravel-Backpack/Base.git",
+            "reference": "eca3f25caf10e35c3741055522041ad6bec68f60"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Laravel-Backpack/Base/zipball/eca3f25caf10e35c3741055522041ad6bec68f60",
+            "reference": "eca3f25caf10e35c3741055522041ad6bec68f60",
+            "shasum": ""
+        },
+        "require": {
+            "almasaeed2010/adminlte": "2.3.*",
+            "illuminate/support": "~5.1",
+            "jenssegers/date": "^3.2",
+            "laravel/framework": "5.3.*|5.4.*",
+            "prologue/alerts": "^0.4.1"
+        },
+        "require-dev": {
+            "backpack/generators": "^1.1",
+            "laracasts/generators": "^1.1",
+            "phpunit/phpunit": "4.*",
+            "scrutinizer/ocular": "~1.1",
+            "squizlabs/php_codesniffer": "~2.3"
+        },
+        "time": "2017-08-11T05:04:18+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Backpack\\Base\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cristian Tabacitu",
+                "email": "hello@tabacitu.ro",
+                "homepage": "http://www.tabacitu.ro",
+                "role": "Chief Architect & Developer"
+            }
+        ],
+        "description": "Laravel Backpack's base package, which offers admin authentication and a blank admin panel using AdminLTE",
+        "homepage": "https://github.com/laravel-backpack/base",
+        "keywords": [
+            "backpack",
+            "base"
+        ]
     }
 ]
