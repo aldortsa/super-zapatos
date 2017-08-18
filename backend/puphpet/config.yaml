@@ -291,6 +291,36 @@ php:
             - cli
             - intl
             - xml
+            - mysqlnd
+            - opcache
+            - pdo
+            - calendar
+            - ctype
+            - dom
+            - exif
+            - fileinfo
+            - ftp
+            - gettext
+            - iconv
+            - intl
+            - json
+            - mysqli
+            - pdo_mysql
+            - phar
+            - posix
+            - readline
+            - shmop
+            - simplexml
+            - sockets
+            - sysvmsg
+            - sysvsem
+            - sysvshm
+            - tokenizer
+            - wddx
+            - xmlreader
+            - xmlwritter
+            - xsl
+            - zzzz_custom
         pear: {  }
         pecl: {  }
     ini:
