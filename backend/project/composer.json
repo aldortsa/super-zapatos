@@ -1,0 +1,5 @@
+{
+    "require": {
+        "backpack/base": "^0.7.22"
+    }
+}
