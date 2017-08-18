@@ -230,7 +230,7 @@ apache:
             servername: super-zapatos-backpack.dev
             serveraliases:
                 - super-zapatos-backpack.dev
-            docroot: /var/www/
+            docroot: /var/www/public
             port: '80'
             setenvif:
                 - 'Authorization "(.*)" HTTP_AUTHORIZATION=$1'
