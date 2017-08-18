@@ -285,9 +285,10 @@ letsencrypt:
 php:
     install: '1'
     settings:
-        version: '7.1'
+        version: '7.0'
     modules:
         php:
+            - fpm
             - cli
             - intl
             - xml
@@ -305,6 +306,7 @@ php:
             - intl
             - json
             - mysqli
+            - mysql
             - pdo_mysql
             - phar
             - posix
@@ -321,6 +323,7 @@ php:
             - xmlwritter
             - xsl
             - zzzz_custom
+            - mbstring
         pear: {  }
         pecl: {  }
     ini:
