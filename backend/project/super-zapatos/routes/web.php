@@ -21,13 +21,10 @@ Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middle
     CRUD::resource('article', 'Admin\ArticleCrudController');
 });
 
-Route::group(['prefix' => 'services', 'middleware' => 'App\Http\Middleware\BasicAuthJsonMiddleware'], function(){
+Route::group(['prefix' => 'services', 'middleware' => 'App\Http\Middleware\BasicAuthMiddleware'], function(){
     Route::get('stores',"StoreController@index");
     Route::get('articles',"ArticleController@index");
     Route::get('stores/{id}/articles',"StoreController@article_by_store");
-    Route::post('stores',"StoreController@index_xml");
-    Route::post('articles',"ArticleController@index_xml");
-    Route::post('stores/{id}/articles',"StoreController@article_by_store");
 });
 
 
