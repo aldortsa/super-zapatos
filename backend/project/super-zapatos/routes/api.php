@@ -16,3 +16,11 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//this was removed form here to include on the respective specification
+Route::group(['prefix' => 'services', 'middleware' => 'App\Http\Middleware\BasicAuthXmlMiddleware'], function(){
+    Route::get('stores',"StoreController@index_xml");
+    Route::get('articles',"ArticleController@index_xml");
+    Route::get('stores/{id}/articles',"StoreController@article_by_store");
+});
+

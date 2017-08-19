@@ -180,6 +180,9 @@ return [
         Backpack\Base\BaseServiceProvider::class,
         Backpack\CRUD\CrudServiceProvider::class,
 
+        // Tartan\XmlResponse\XmlResponseServiceProvider::class,
+        XmlResponse\XmlResponseServiceProvider::class,
+
     ],
 
     /*

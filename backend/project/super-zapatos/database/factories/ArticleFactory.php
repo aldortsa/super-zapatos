@@ -2,11 +2,7 @@
 $factory->define(App\Article::class, function (Faker\Generator $faker) {
     return [
         'store_id' => function () {
-            if (rand(1, 100) % 50 == 0) {
-                return factory(App\Store::class)->create()->id;
-            } else {
-                return rand(1, 10);
-            }
+                return rand((App\Store::all()->first())->id, (App\Store::all()->last())->id);
         },
         'name'    => ucfirst($faker->unique()->sentence()),
         'description'  => $faker->text(100),

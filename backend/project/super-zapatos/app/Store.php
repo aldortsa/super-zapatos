@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
-
+use App\Article;
 class Store extends Model
 {
     use CrudTrait;
@@ -17,7 +17,7 @@ class Store extends Model
 
         protected $table = 'stores';
         protected $primaryKey = 'id';
-        protected $hidden = ['id'];
+        protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
         protected $fillable = [
                                 'name',
                                 'address',
@@ -38,7 +38,7 @@ class Store extends Model
 
         public function articles()
         {
-            return $this->hasMany('App\Article');
+            return $this->hasMany(Article::class);
         }
 
         /*

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
-
+use App\Store;
 class Article extends Model
 {
     use CrudTrait;
@@ -16,7 +16,7 @@ class Article extends Model
 
     	protected $table = 'articles';
     	protected $primaryKey = 'id';
-    	protected $hidden = ['id'];
+    	protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
     	protected $fillable = [
 					    		'name',
 					    		'description',
@@ -41,7 +41,7 @@ class Article extends Model
 
     	public function store()
         {
-            return $this->belongsTo('App\Store', 'store_id');
+            return $this->belongsTo(Store::class, 'store_id');
         }
 
     	/*

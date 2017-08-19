@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6847975f3f729485710f8deac312f683",
+    "content-hash": "ac799ede58c43817c5cc9c2253cb1b7f",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -888,6 +888,49 @@
             "time": "2017-03-20T17:10:46+00:00"
         },
         {
+            "name": "iamtartan/laravel-xml-response",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/iamtartan/laravel-xml-response.git",
+                "reference": "55af6f67a495562e63bd31ec9887063333ea9b88"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/iamtartan/laravel-xml-response/zipball/55af6f67a495562e63bd31ec9887063333ea9b88",
+                "reference": "55af6f67a495562e63bd31ec9887063333ea9b88",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.x.x",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tartan\\XmlResponse\\": "src/XmlResponse"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aboozar Ghafari <Tartan>",
+                    "email": "iamtartan@gmail.com"
+                }
+            ],
+            "description": "Added a method to Laravel response for handling xml response and also converting Eloquent return to XML.",
+            "keywords": [
+                "eloquent",
+                "laravel",
+                "response",
+                "xml"
+            ],
+            "time": "2017-01-07T14:03:11+00:00"
+        },
+        {
             "name": "intervention/image",
             "version": "2.4.0",
             "source": {
@@ -956,6 +999,42 @@
                 "watermark"
             ],
             "time": "2017-07-03T15:50:40+00:00"
+        },
+        {
+            "name": "jailtonsc/laravel-response-xml",
+            "version": "v2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jailtonsc/laravel-response-xml.git",
+                "reference": "571aad65e0f35abbc31372e2d091be6aa2eae685"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jailtonsc/laravel-response-xml/zipball/571aad65e0f35abbc31372e2d091be6aa2eae685",
+                "reference": "571aad65e0f35abbc31372e2d091be6aa2eae685",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "XmlResponse\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Add the method xml integrating the laravel's response, converting eloquent return to XML.",
+            "keywords": [
+                "eloquent",
+                "laravel",
+                "response",
+                "xml"
+            ],
+            "time": "2017-06-02T13:32:33+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
