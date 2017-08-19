@@ -79,7 +79,7 @@ Run seeds
 
     php artisan db:seed
 
-##Project Files
+## Project Files
 
 All the files are located on 
 
@@ -95,7 +95,7 @@ All the files are located on
 
 This Project was created with [Backpack](https://backpackforlaravel.com/) as Admin GUI.
 
-##JSON Services
+## JSON Services
 
 You can visit [POSTMAN DOCS](https://documenter.getpostman.com/view/2611029/superzapatos/6n8wrAA) in order to check the services docs.
 	
@@ -105,7 +105,7 @@ You can visit [POSTMAN DOCS](https://documenter.getpostman.com/view/2611029/supe
 
 Notes: Remember replace :id by a current id of existing store
 
-##XML Services
+## XML Services
 
 You can visit [POSTMAN DOCS](https://documenter.getpostman.com/view/2611029/superzapatos/6n8wrAA) in order to check the services docs.
 
@@ -115,16 +115,16 @@ You can visit [POSTMAN DOCS](https://documenter.getpostman.com/view/2611029/supe
 
 Notes: Remember replace :id by a current id of existing store
 
-##HTTP AUTH Credentials:
+## HTTP AUTH Credentials:
 
 You can find the HTTP Credentials on BasicAuthJsonMiddleware or BasicAuthXMLMiddleware
 
-##Admin Tool
+## Admin Tool
 
 URL: /admin
 Credentials: You can find the credentials on SuperZapatosDevTablesSeeder.php
 
-#PHPUnit
+## PHPUnit
 
 If you want to run phpunit, you can use
 	
