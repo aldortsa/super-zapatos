@@ -52,6 +52,7 @@ You can get rid of the VM server using the command:
     vagrant destroy
 
 ## Create vendor folder
+
 Laravel needs vendor folder to works
 To create vendor folder connect via ssh:
 
@@ -79,7 +80,8 @@ Run seeds
     php artisan db:seed
 
 
-##Project Files 
+##Project Files
+
 All the files are located on 
 
 	./backend/project/super-zapatos
@@ -94,7 +96,6 @@ All the files are located on
 
 This Project was created with [Backpack](https://backpackforlaravel.com/) as Admin GUI.
 
-##Services URL
 ##JSON Services
 
 You can visit [POSTMAN DOCS](https://documenter.getpostman.com/view/2611029/superzapatos/6n8wrAA) in order to check the services docs.
@@ -106,6 +107,7 @@ You can visit [POSTMAN DOCS](https://documenter.getpostman.com/view/2611029/supe
 Notes: Remember replace :id by a current id of existing store
 
 ##XML Services
+
 You can visit [POSTMAN DOCS](https://documenter.getpostman.com/view/2611029/superzapatos/6n8wrAA) in order to check the services docs.
 
 	http://super-zapatos-backpack.dev/api/services/stores
@@ -115,13 +117,16 @@ You can visit [POSTMAN DOCS](https://documenter.getpostman.com/view/2611029/supe
 Notes: Remember replace :id by a current id of existing store
 
 ##HTTP AUTH Credentials:
+
 You can find the HTTP Credentials on BasicAuthJsonMiddleware or BasicAuthXMLMiddleware
 
 ##Admin Tool
+
 URL: /admin
 Credentials: You can find the credentials on SuperZapatosDevTablesSeeder.php
 
 #PHPUnit
+
 If you want to run phpunit, you can use
 	
 	./vendor/bin/phpunit
