@@ -98,16 +98,19 @@ This Project was created with [Backpack](https://backpackforlaravel.com/) as Adm
 ##JSON Services
 
 You can visit [POSTMAN DOCS](https://documenter.getpostman.com/view/2611029/superzapatos/6n8wrAA) in order to check the services docs.
-http://super-zapatos-backpack.dev/services/stores
-http://super-zapatos-backpack.dev/services/articles
-http://super-zapatos-backpack.dev/services/stores/:id/articles
+	
+	http://super-zapatos-backpack.dev/services/stores
+	http://super-zapatos-backpack.dev/services/articles
+	http://super-zapatos-backpack.dev/services/stores/:id/articles
 
 Notes: Remember replace :id by a current id of existing store
 
 ##XML Services
-http://super-zapatos-backpack.dev/api/services/stores
-http://super-zapatos-backpack.dev/api/services/articles
-http://super-zapatos-backpack.dev/api/services/stores/:id/articles
+You can visit [POSTMAN DOCS](https://documenter.getpostman.com/view/2611029/superzapatos/6n8wrAA) in order to check the services docs.
+
+	http://super-zapatos-backpack.dev/api/services/stores
+	http://super-zapatos-backpack.dev/api/services/articles
+	http://super-zapatos-backpack.dev/api/services/stores/:id/articles
 
 Notes: Remember replace :id by a current id of existing store
 
