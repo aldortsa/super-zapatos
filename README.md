@@ -1,6 +1,7 @@
 # super-zapatos
 
 VAGRANT CONFIGURATION TESTED ON OSX 10.11.6
+
 # Vagrant + Puppet base
 
 This is the base configuration of the project, using Puphpet
@@ -83,3 +84,26 @@ All the files are located on
 	./backend/project/super-zapatos.
 
 This Project was created with [Backpack](https://backpackforlaravel.com/) as Admin GUI.
+
+##Services URL
+##JSON Services
+
+http://super-zapatos-backpack.dev/services/stores
+http://super-zapatos-backpack.dev/services/articles
+http://super-zapatos-backpack.dev/services/stores/:id/articles
+
+Notes: Remember replace :id by a current id of existing store
+
+##XML Services
+http://super-zapatos-backpack.dev/api/services/stores
+http://super-zapatos-backpack.dev/api/services/articles
+http://super-zapatos-backpack.dev/api/services/stores/:id/articles
+
+Notes: Remember replace :id by a current id of existing store
+
+##HTTP AUTH Credentials:
+You can find the HTTP Credentials on BasicAuthJsonMiddleware or BasicAuthXMLMiddleware
+
+##Admin Tool
+URL: /admin
+Credentials: You can find the credentials on SuperZapatosDevTablesSeeder.php

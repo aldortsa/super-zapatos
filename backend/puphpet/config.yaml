@@ -427,7 +427,7 @@ mysql:
             password: '123'
     databases:
         mysqlnd_5ak6n7jln9ch:
-            name: dbname
+            name: super_zapatos
             sql: ''
     grants:
         mysqlng_liqiz64be0q7:
