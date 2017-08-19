@@ -8,7 +8,7 @@ trait ArticlesTrait {
     public function load_all_articles() {
         try{
 	        $stores = Article::all();
-	        $model_name = (new \ReflectionClass($stores->first()))->getShortName();
+	        $model_name = class_basename(Article::class);
 	        $data = array(
 	        	(count($stores) > 1 ? str_plural($model_name) : $model_name) => $stores->toArray(),
 	        	'success' => true,
@@ -51,9 +51,8 @@ trait ArticlesTrait {
 	    		);
 	    		return $data;	
 	        }
-	        $store = $store->first();
 	        $articles = $store->articles()->get();
-	        $model_name = (new \ReflectionClass($articles->first()))->getShortName();
+		    $model_name = class_basename(Article::class);
 	        $data = array(
 	        	(count($articles) > 1 ? str_plural($model_name) : $model_name) => $articles->toArray(),
 	        	'success' => true,

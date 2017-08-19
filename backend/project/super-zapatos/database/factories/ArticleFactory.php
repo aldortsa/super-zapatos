@@ -2,7 +2,7 @@
 $factory->define(App\Article::class, function (Faker\Generator $faker) {
     return [
         'store_id' => function () {
-                return rand((App\Store::all()->first())->id, (App\Store::all()->last())->id);
+                return App\Store::all()->random(1)->first()->id;
         },
         'name'    => ucfirst($faker->unique()->sentence()),
         'description'  => $faker->text(100),
