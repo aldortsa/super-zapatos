@@ -14,8 +14,12 @@ class ServicesResponseStatusTest extends TestCase
 	 * Unautorized request on /services/stores
 	 * @return [type] [description]
 	 */
-    public function test401UnauthorizedOnMStoresJSON() { 
-        $response = $this->call('GET', '/services/stores');
+    public function test401UnauthorizedOnStoresJSON() { 
+        $response = $this->call('GET', 
+            '/services/stores',
+            [],[],[],
+            ['CONTENT_TYPE'=> 'application/json']
+        );
         $this->assertEquals(401, $response->status());
     }
 
@@ -23,8 +27,12 @@ class ServicesResponseStatusTest extends TestCase
 	 * Unautorized request on /services/articles
 	 * @return [type] [description]
 	 */
-    public function test401UnauthorizedOnMArticlesJSON() { 
-        $response = $this->call('GET', '/services/articles');
+    public function test401UnauthorizedOnArticlesJSON() { 
+        $response = $this->call('GET', 
+            '/services/articles',
+            [],[],[],
+            ['CONTENT_TYPE'=> 'application/json']
+        );
         $this->assertEquals(401, $response->status());
     }
 
@@ -32,8 +40,15 @@ class ServicesResponseStatusTest extends TestCase
 	 * Unautorized request on /services/stores/:id/articles
 	 * @return [type] [description]
 	 */
-    public function test401UnauthorizedOnMArticlesByStoreJSON() { 
-        $response = $this->call('GET', '/services/stores/1/articles');
+    public function test401UnauthorizedOnMArticlesByStoreJSON() {
+        $name = 'Unit Has Test Name';
+        $address = 'Unit Has Test Address'; 
+        $store = Store::create(['name' => $name, 'address'=>$address]); 
+        $response = $this->call('GET', 
+            '/services/stores/'.$store->id.'/articles',
+            [],[],[],
+            ['CONTENT_TYPE'=> 'application/json']
+        );
         $this->assertEquals(401, $response->status());
     }
 
@@ -41,8 +56,12 @@ class ServicesResponseStatusTest extends TestCase
 	 * Unautorized request on /api/services/stores
 	 * @return [type] [description]
 	 */
-    public function test401UnauthorizedOnMStoresXML() { 
-        $response = $this->call('GET', '/api/services/stores');
+    public function test401UnauthorizedOnStoresXML() { 
+        $response = $this->call('GET', 
+            '/services/stores',
+            [],[],[],
+            ['CONTENT_TYPE'=> 'application/xml']
+        );
         $this->assertEquals(401, $response->status());
     }
 
@@ -50,8 +69,12 @@ class ServicesResponseStatusTest extends TestCase
 	 * Unautorized request on /api/services/articles
 	 * @return [type] [description]
 	 */
-    public function test401UnauthorizedOnMArticlesXML() { 
-        $response = $this->call('GET', '/api/services/articles');
+    public function test401UnauthorizedOnArticlesXML() { 
+        $response = $this->call('GET', 
+            '/services/articles',
+            [],[],[],
+            ['CONTENT_TYPE'=> 'application/xml']
+        );
         $this->assertEquals(401, $response->status());
     }
 
@@ -59,8 +82,12 @@ class ServicesResponseStatusTest extends TestCase
 	 * Unautorized request on /api/services/stores/:id/articles
 	 * @return [type] [description]
 	 */
-    public function test401UnauthorizedOnMArticlesByStoreXML() { 
-        $response = $this->call('GET', '/api/services/stores/1/articles');
+    public function test401UnauthorizedOnArticlesByStoreXML() { 
+        $response = $this->call('GET', 
+            '/services/stores/1/articles',
+            [],[],[],
+            ['CONTENT_TYPE'=> 'application/xml']
+        );
         $this->assertEquals(401, $response->status());
     }
 
@@ -69,8 +96,17 @@ class ServicesResponseStatusTest extends TestCase
 	 * Autorized request on /services/stores
 	 * @return [type] [description]
 	 */
-    public function test200AuthorizedOnMStoresJSON() { 
-        $response = $this->call('GET', '/services/stores', [], [], [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => '123456', "HTTP_Authorization" => "Basic " . base64_encode('admin:123456')]);
+    public function test200AuthorizedOnStoresJSON() { 
+        $response = $this->call('GET', 
+            '/services/stores', 
+            [],[],[], 
+            [
+                'CONTENT_TYPE'=> 'application/json', 
+                'PHP_AUTH_USER' => 'admin', 
+                'PHP_AUTH_PW' => '123456', 
+                'HTTP_Authorization' => 'Basic ' . base64_encode('admin:123456')
+            ]
+        );
         $this->assertEquals(200, $response->status());
     }
 
@@ -78,8 +114,17 @@ class ServicesResponseStatusTest extends TestCase
 	 * Autorized request on /services/articles
 	 * @return [type] [description]
 	 */
-    public function test200AuthorizedOnMArticlesJSON() { 
-        $response = $this->call('GET', '/services/articles', [], [], [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => '123456', "HTTP_Authorization" => "Basic " . base64_encode('admin:123456')]);
+    public function test200AuthorizedOnArticlesJSON() { 
+        $response = $this->call('GET', 
+            '/services/articles', 
+            [],[],[], 
+            [
+                'CONTENT_TYPE'=> 'application/json',
+                'PHP_AUTH_USER' => 'admin', 
+                'PHP_AUTH_PW' => '123456', 
+                'HTTP_Authorization' => 'Basic ' . base64_encode('admin:123456')
+            ]
+        );
         $this->assertEquals(200, $response->status());
     }
 
@@ -87,8 +132,20 @@ class ServicesResponseStatusTest extends TestCase
 	 * Autorized request on /services/stores/:id/articles
 	 * @return [type] [description]
 	 */
-    public function test200AuthorizedOnMArticlesByStoreJSON() { 
-        $response = $this->call('GET', '/services/stores/1/articles', [], [], [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => '123456', "HTTP_Authorization" => "Basic " . base64_encode('admin:123456')]);
+    public function test200AuthorizedOnArticlesByStoreJSON() {
+        $name = 'Unit Has Test Name';
+        $address = 'Unit Has Test Address'; 
+        $store = Store::create(['name' => $name, 'address'=>$address]);
+        $response = $this->call('GET', 
+            '/services/stores/'.$store->id.'/articles', 
+            [], [], [], 
+            [
+                'CONTENT_TYPE'=> 'application/json',
+                'PHP_AUTH_USER' => 'admin', 
+                'PHP_AUTH_PW' => '123456', 
+                'HTTP_Authorization' => 'Basic ' . base64_encode('admin:123456')
+            ]
+        );
         $this->assertEquals(200, $response->status());
     }
 
@@ -96,9 +153,18 @@ class ServicesResponseStatusTest extends TestCase
 	 * Bad request on /services/stores/:id/articles
 	 * @return [type] [description]
 	 */
-    public function test400BadRequestOnMArticlesByStoreJSON() {
+    public function test400BadRequestOnArticlesByStoreJSON() {
     
-        $response = $this->call('GET', '/services/stores/123b/articles', [], [], [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => '123456', "HTTP_Authorization" => "Basic " . base64_encode('admin:123456')]);
+        $response = $this->call('GET', 
+            '/services/stores/123b/articles', 
+            [], [], [], 
+            [
+                'CONTENT_TYPE'=> 'application/json',
+                'PHP_AUTH_USER' => 'admin', 
+                'PHP_AUTH_PW' => '123456', 
+                'HTTP_Authorization' => 'Basic ' . base64_encode('admin:123456')
+            ]
+        );
         $this->assertEquals(400, $response->status());
     }
 
@@ -106,9 +172,18 @@ class ServicesResponseStatusTest extends TestCase
 	 * Record not found on /services/stores/:id/articles
 	 * @return [type] [description]
 	 */
-    public function test404RecordNotFoundOnMArticlesByStoreJSON() {
+    public function test404RecordNotFoundOnArticlesByStoreJSON() {
     	$store = Store::all()->last();
-        $response = $this->call('GET', '/services/stores/'.($store->id+1).'/articles', [], [], [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => '123456', "HTTP_Authorization" => "Basic " . base64_encode('admin:123456')]);
+        $response = $this->call('GET', 
+            '/services/stores/'.($store->id+1).'/articles', 
+            [], [], [], 
+            [
+                'CONTENT_TYPE'=> 'application/json',
+                'PHP_AUTH_USER' => 'admin', 
+                'PHP_AUTH_PW' => '123456', 
+                'HTTP_Authorization' => 'Basic ' . base64_encode('admin:123456')
+            ]
+        );
         $this->assertEquals(404, $response->status());
     }
 
@@ -116,8 +191,17 @@ class ServicesResponseStatusTest extends TestCase
 	 * Autorized request on /api/services/stores
 	 * @return [type] [description]
 	 */
-    public function test200AuthorizedOnMStoresXML() { 
-        $response = $this->call('GET', '/api/services/stores', [], [], [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => '123456', "HTTP_Authorization" => "Basic " . base64_encode('admin:123456')]);
+    public function test200AuthorizedOnStoresXML() { 
+        $response = $this->call('GET', 
+            '/services/stores', 
+            [], [], [], 
+            [
+                'CONTENT_TYPE'=> 'application/xml',
+                'PHP_AUTH_USER' => 'admin', 
+                'PHP_AUTH_PW' => '123456', 
+                'HTTP_Authorization' => 'Basic ' . base64_encode('admin:123456')
+            ]
+        );
         $this->assertEquals(200, $response->status());
     }
 
@@ -125,8 +209,17 @@ class ServicesResponseStatusTest extends TestCase
 	 * Autorized request on /api/services/articles
 	 * @return [type] [description]
 	 */
-    public function test200AuthorizedOnMArticlesXML() { 
-        $response = $this->call('GET', '/api/services/articles', [], [], [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => '123456', "HTTP_Authorization" => "Basic " . base64_encode('admin:123456')]);
+    public function test200AuthorizedOnArticlesXML() { 
+        $response = $this->call('GET', 
+            '/services/articles', 
+            [], [], [], 
+            [
+                'CONTENT_TYPE'=> 'application/xml',
+                'PHP_AUTH_USER' => 'admin', 
+                'PHP_AUTH_PW' => '123456', 
+                'HTTP_Authorization' => 'Basic ' . base64_encode('admin:123456')
+            ]
+        );
         $this->assertEquals(200, $response->status());
     }
 
@@ -137,7 +230,16 @@ class ServicesResponseStatusTest extends TestCase
     public function test200AuthorizedOnArticlesByStoreXML() {
     	
     	$store = Store::create(['name' => 'Unit Test Store', 'address'=>'Unit Test Address']);
-        $response = $this->call('GET', '/api/services/stores/'.$store->id.'/articles', [], [], [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => '123456', "HTTP_Authorization" => "Basic " . base64_encode('admin:123456')]);
+        $response = $this->call('GET', 
+            '/services/stores/'.$store->id.'/articles', 
+            [], [], [], 
+            [
+                'CONTENT_TYPE'=> 'application/xml',
+                'PHP_AUTH_USER' => 'admin', 
+                'PHP_AUTH_PW' => '123456', 
+                'HTTP_Authorization' => 'Basic ' . base64_encode('admin:123456')
+            ]
+        );
         $this->assertEquals(200, $response->status());
     }
 
@@ -147,7 +249,16 @@ class ServicesResponseStatusTest extends TestCase
 	 */
     public function test400BadRequestOnArticlesByStoreXML() {
     
-        $response = $this->call('GET', '/api/services/stores/123b/articles', [], [], [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => '123456', "HTTP_Authorization" => "Basic " . base64_encode('admin:123456')]);
+        $response = $this->call('GET', 
+            '/services/stores/123b/articles', 
+            [], [], [], 
+            [
+                'CONTENT_TYPE'=> 'application/xml',
+                'PHP_AUTH_USER' => 'admin', 
+                'PHP_AUTH_PW' => '123456', 
+                'HTTP_Authorization' => 'Basic ' . base64_encode('admin:123456')
+            ]
+        );
         $this->assertEquals(400, $response->status());
     }
 
@@ -158,7 +269,16 @@ class ServicesResponseStatusTest extends TestCase
     public function test404RecordNotFoundOnArticlesByStoreXML() {
     	$store = Store::all()->last();
 
-        $response = $this->call('GET', '/api/services/stores/'.($store->id+1).'/articles', [], [], [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => '123456', "HTTP_Authorization" => "Basic " . base64_encode('admin:123456')]);
+        $response = $this->call('GET', 
+            '/services/stores/'.($store->id+1).'/articles', 
+            [], [], [], 
+            [
+                'CONTENT_TYPE'=> 'application/xml',
+                'PHP_AUTH_USER' => 'admin', 
+                'PHP_AUTH_PW' => '123456', 
+                'HTTP_Authorization' => 'Basic ' . base64_encode('admin:123456')
+            ]
+        );
         $this->assertEquals(404, $response->status());
     }
 

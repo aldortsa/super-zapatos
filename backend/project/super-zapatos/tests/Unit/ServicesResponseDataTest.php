@@ -18,8 +18,17 @@ class ServicesResponseDataTest extends TestCase
     public function testAllStoresNotEmpty() {
     	
     	factory(Store::class, 10)->create();
-        $response = $this->call('GET', '/services/stores', [], [], [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => '123456', "HTTP_Authorization" => "Basic " . base64_encode('admin:123456')]);
-        $stores = $response->getData()->Stores;
+        $response = $this->call('GET', 
+            '/services/stores', 
+            [], [], [], 
+            [
+                'CONTENT_TYPE'=> 'application/json', 
+                'PHP_AUTH_USER' => 'admin', 
+                'PHP_AUTH_PW' => '123456', 
+                'HTTP_Authorization' => 'Basic ' . base64_encode('admin:123456')
+            ]
+        );
+        $stores = $response->getData();
 
         $this->assertEquals(true, (count($stores) > 0));
     }   
@@ -32,9 +41,16 @@ class ServicesResponseDataTest extends TestCase
     	$name = 'Unit Has Test Name';
     	$address = 'Unit Has Test Address';
     	$store = Store::create(['name' => $name, 'address'=>$address]);
-    	
-    	
-        $response = $this->call('GET', '/services/stores', [], [], [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => '123456', "HTTP_Authorization" => "Basic " . base64_encode('admin:123456')]);
+        $response = $this->call('GET', 
+            '/services/stores', 
+            [], [], [], 
+            [
+                'CONTENT_TYPE'=> 'application/json', 
+                'PHP_AUTH_USER' => 'admin', 
+                'PHP_AUTH_PW' => '123456', 
+                'HTTP_Authorization' => 'Basic ' . base64_encode('admin:123456')
+            ]
+        );
         $stores = $response->getData()->Stores;
 		$store = end($stores);
         $this->assertEquals(true, ($store->name == $name && $store->address == $address));
@@ -48,9 +64,17 @@ class ServicesResponseDataTest extends TestCase
     	
     	factory(Store::class, 10)->create();
     	factory(Article::class, 100)->create();
-        $response = $this->call('GET', '/services/articles', [], [], [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => '123456', "HTTP_Authorization" => "Basic " . base64_encode('admin:123456')]);
+        $response = $this->call('GET', 
+            '/services/articles', 
+            [], [], [], 
+            [
+                'CONTENT_TYPE'=> 'application/json', 
+                'PHP_AUTH_USER' => 'admin', 
+                'PHP_AUTH_PW' => '123456', 
+                'HTTP_Authorization' => 'Basic ' . base64_encode('admin:123456')
+            ]
+        );
         $articles = $response->getData()->Articles;
-
         $this->assertEquals(true, (count($articles) > 0));
     }
 
@@ -75,7 +99,16 @@ class ServicesResponseDataTest extends TestCase
     		'total_in_vault' => $total_vault,
     		]);
     	$store = Store::all()->last();
-        $response = $this->call('GET', '/services/articles', [], [], [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => '123456', "HTTP_Authorization" => "Basic " . base64_encode('admin:123456')]);
+        $response = $this->call('GET', 
+            '/services/articles', 
+            [], [], [], 
+            [
+                'CONTENT_TYPE'=> 'application/json',
+                'PHP_AUTH_USER' => 'admin', 
+                'PHP_AUTH_PW' => '123456', 
+                'HTTP_Authorization' => 'Basic ' . base64_encode('admin:123456')
+            ]
+        );
         $articles = $response->getData()->Articles;
         $article = end($articles);
 
@@ -108,7 +141,16 @@ class ServicesResponseDataTest extends TestCase
     		'total_in_vault' => $total_vault,
     		]);
     	$store = Store::all()->last();
-        $response = $this->call('GET', '/services/stores/'.$store->id.'/articles', [], [], [], ['PHP_AUTH_USER' => 'admin', 'PHP_AUTH_PW' => '123456', "HTTP_Authorization" => "Basic " . base64_encode('admin:123456')]);
+        $response = $this->call('GET', 
+            '/services/stores/'.$store->id.'/articles', 
+            [],[],[], 
+            [
+                'CONTENT_TYPE'=> 'application/json',
+                'PHP_AUTH_USER' => 'admin', 
+                'PHP_AUTH_PW' => '123456', 
+                'HTTP_Authorization' => 'Basic ' . base64_encode('admin:123456')
+            ]
+        );
         $articles = $response->getData()->Article;
         
         $article = end($articles);

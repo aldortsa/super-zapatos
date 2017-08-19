@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Middleware;
 use Closure;
-class BasicAuthJsonMiddleware {
+class BasicAuthMiddleware {
     /**
      * Handle an incoming request.
      *
@@ -10,6 +10,7 @@ class BasicAuthJsonMiddleware {
      * @return mixed
      */
     public function handle($request, Closure $next) {
+        
         if($request->getUser() != 'admin' || $request->getPassword() != '123456') {
             $data = array(
                 'success' => false,
@@ -17,7 +18,11 @@ class BasicAuthJsonMiddleware {
                 'error_msg' => 'Not authorized',
             );
             response('Not authorized', 401);
-            return response()->json($data, 401);
+            if (strpos($request->headers->get('Content-Type'), 'application/json') === 0){
+                return response()->json($data, 401);
+            }else{
+                return response()->xml($data, 401);
+            }
         }
         return $next($request);
     }
