@@ -79,7 +79,6 @@ Run seeds
 
     php artisan db:seed
 
-
 ##Project Files
 
 All the files are located on 
