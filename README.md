@@ -62,15 +62,16 @@ Go to project folder:
 	cd /var/www/super-zapatos/
 Run composer command:
 
-	sudo composer install
+	composer install
 
 Create database schema if doesn't exists
 
     mysql -uroot -123
+    create database super_zapatos;
+    exit
 
 Run migrations
 
-    composer update
     php artisan migrate
 
 Run seeds
@@ -81,13 +82,22 @@ Run seeds
 ##Project Files 
 All the files are located on 
 
-	./backend/project/super-zapatos.
+	./backend/project/super-zapatos
+
+.env database connection could need:
+
+	DB_HOST=127.0.0.1
+	DB_PORT=3306
+	DB_DATABASE=super_zapatos
+	DB_USERNAME=root
+	DB_PASSWORD=123
 
 This Project was created with [Backpack](https://backpackforlaravel.com/) as Admin GUI.
 
 ##Services URL
 ##JSON Services
 
+You can visit [POSTMAN DOCS](https://documenter.getpostman.com/view/2611029/superzapatos/6n8wrAA) in order to check the services docs.
 http://super-zapatos-backpack.dev/services/stores
 http://super-zapatos-backpack.dev/services/articles
 http://super-zapatos-backpack.dev/services/stores/:id/articles
@@ -107,3 +117,9 @@ You can find the HTTP Credentials on BasicAuthJsonMiddleware or BasicAuthXMLMidd
 ##Admin Tool
 URL: /admin
 Credentials: You can find the credentials on SuperZapatosDevTablesSeeder.php
+
+#PHPUnit
+If you want to run phpunit, you can use
+	
+	./vendor/bin/phpunit
+
